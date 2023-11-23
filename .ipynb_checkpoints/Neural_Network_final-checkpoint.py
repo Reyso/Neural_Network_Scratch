@@ -8,7 +8,7 @@ class Neural:
     def __init__(self, layers: List[int], epochs: int, 
                  learning_rate: float = 0.001, batch_size: int=32,
                  validation_split: float = 0.2, verbose: int=1,
-                 activation_function: str = 'relu'):
+                 activation_function: str = 'relu',random_state: int = None):
         self._layer_structure: List[int] = layers
         self._batch_size: int = batch_size
         self._epochs: int = epochs
@@ -19,7 +19,10 @@ class Neural:
         self._is_fit: bool = False
         self._layers = None
         self._activation_function = activation_function
-
+        self._random_state = random_state  # Adiciona o atributo random_state
+        
+        if random_state is not None:
+            np.random.seed(random_state)
         """
         Inicializa a classe Neural com os parâmetros necessários para a rede neural.
 
