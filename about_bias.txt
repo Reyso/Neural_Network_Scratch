@@ -1,0 +1,9 @@
+Sim, a topologia da rede neural foi definida como 5-3-1, o que significa que a camada de entrada tem 5 neurônios, a camada oculta tem 3 neurônios e a camada de saída tem 1 neurônio. A camada de entrada está associada aos atributos das entradas, a camada oculta tem 3 neurônios intermediários e a camada de saída gera uma única saída.
+
+Quanto ao vetor de bias, sim, no contexto da implementação apresentada, cada índice do vetor de bias está associado a uma coluna da matriz de pesos da camada correspondente. Isso ocorre porque, durante a propagação para a frente (forward pass) e a retropropagação (backward pass), cada neurônio em uma camada tem seu próprio termo de viés.
+
+Para a camada oculta (Layer 1) com 3 neurônios, o vetor de bias é [0.99967486, 0.99983594, 1.00002349]. Cada valor do vetor de bias é adicionado à soma ponderada das entradas multiplicadas pelos pesos correspondentes.
+
+Para a camada de saída (Layer 2) com 1 neurônio, o vetor de bias é [0.99970628]. Da mesma forma, esse valor de bias é adicionado à soma ponderada das saídas da camada oculta multiplicadas pelos pesos correspondentes.
+
+Esses valores de bias ajudam a introduzir um deslocamento na função de ativação, permitindo que a rede neural aprenda padrões mais complexos e não se limite apenas a relações lineares nos dados.

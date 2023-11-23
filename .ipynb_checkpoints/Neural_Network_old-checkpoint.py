@@ -30,7 +30,10 @@ class Neural:
         layers = []
         for i in range(1, len(self._layer_structure)):
             weights = self.initialize_weights(self._layer_structure[i - 1], self._layer_structure[i])
-            biases = np.ones((1, self._layer_structure[i]))
+            # biases = np.ones((1, self._layer_structure[i]))
+            biases = np.random.uniform(low=0, high=1, size=(1, self._layer_structure[i]))
+
+
             layers.append((weights, biases))
         return layers
     
